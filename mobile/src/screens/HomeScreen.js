@@ -103,10 +103,20 @@ const HomeScreen = ({ navigation }) => {
       {/* User Info */}
       {user && (
         <View style={styles.userInfo}>
-          <Text style={styles.userName}>Hello, {user.name}!</Text>
-          <Text style={styles.userRole}>
-            {user.role === 'driver' ? '🚌 Driver' : '👤 Passenger'}
-          </Text>
+          <View style={styles.userInfoLeft}>
+            <Text style={styles.userName}>Hello, {user.name}!</Text>
+            <Text style={styles.userRole}>
+              {user.role === 'driver' ? '🚌 Driver' : '👤 Passenger'}
+            </Text>
+          </View>
+          {user.role === 'driver' && (
+            <TouchableOpacity
+              style={styles.dashboardButton}
+              onPress={() => navigation.navigate('DriverDashboard')}
+            >
+              <Text style={styles.dashboardButtonText}>My Buses</Text>
+            </TouchableOpacity>
+          )}
         </View>
       )}
 
