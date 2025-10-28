@@ -274,6 +274,61 @@ GOOGLE_MAPS_API_KEY=your_google_maps_api_key
 }
 ```
 
+### Bus Search Endpoints
+
+**GET /api/buses/search**
+```
+Query Params: from, to, date (optional, YYYY-MM-DD)
+```
+Returns buses matching from/to stands with priority sorting.
+
+**GET /api/buses/search-by-number**
+```
+Query Params: query (bus number or name)
+```
+Returns buses matching the query.
+
+**GET /api/buses/:id**
+Returns full bus details including stoppages and driver info.
+
+**GET /api/buses/search-history**
+```
+Headers: Authorization: Bearer <token>
+```
+Returns user's last 50 searches.
+
+### Driver Endpoints
+
+**POST /api/driver/buses**
+```json
+{
+  "bus_name": "Patna Express",
+  "bus_number": "BR-01-AB-1234",
+  "start_stand": "Patna Bus Stand",
+  "end_stand": "Harinagar Bus Stand",
+  "start_time": "06:00 AM",
+  "end_time": "12:30 PM",
+  "run_days": ["M", "T", "W", "Th", "F"],
+  "stoppages": [
+    {
+      "name": "Sonpur",
+      "arrival_time": "07:15 AM",
+      "distance_km": 15
+    }
+  ]
+}
+```
+Creates new bus listing with automatic geocoding.
+
+**GET /api/driver/buses**
+Returns all buses for authenticated driver.
+
+**PUT /api/driver/buses/:id**
+Updates existing bus listing.
+
+**DELETE /api/driver/buses/:id**
+Deletes bus listing.
+
 ### Health Check
 
 **GET /health**
