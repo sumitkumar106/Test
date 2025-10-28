@@ -179,11 +179,18 @@ const HomeScreen = ({ navigation }) => {
           <Text style={styles.emptyText}>No recent searches</Text>
         ) : (
           searchHistory.map((item, index) => (
-            <View key={index} style={styles.historyItem}>
+            <TouchableOpacity
+              key={index}
+              style={styles.historyItem}
+              onPress={() => handleHistoryItemPress(item)}
+            >
               <Text style={styles.historyText}>
-                {item.from} → {item.to}
+                {item.from_stand} → {item.to_stand}
               </Text>
-            </View>
+              <Text style={styles.historyTime}>
+                {new Date(item.searched_at).toLocaleDateString()}
+              </Text>
+            </TouchableOpacity>
           ))
         )}
       </View>
@@ -191,16 +198,6 @@ const HomeScreen = ({ navigation }) => {
       {/* Banner Ad Placeholder */}
       <View style={styles.bannerAd}>
         <Text style={styles.bannerAdText}>banner ads</Text>
-      </View>
-
-      {/* Placeholder for future features */}
-      <View style={styles.placeholder}>
-        <Text style={styles.placeholderText}>
-          ⚠️ This is Phase 1: Authentication Complete!
-        </Text>
-        <Text style={styles.placeholderSubtext}>
-          Search functionality, bus listings, GPS tracking, and other features will be implemented in subsequent phases.
-        </Text>
       </View>
     </ScrollView>
   );
