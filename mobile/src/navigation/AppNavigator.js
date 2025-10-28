@@ -13,6 +13,7 @@ import BusResultsScreen from '../screens/BusResultsScreen';
 import DriverDashboardScreen from '../screens/DriverDashboardScreen';
 import DriverCreateBusScreen from '../screens/DriverCreateBusScreen';
 import DriverEditBusScreen from '../screens/DriverEditBusScreen';
+import BusDetailsScreen from '../screens/BusDetailsScreen';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
