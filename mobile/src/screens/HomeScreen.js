@@ -239,10 +239,16 @@ const styles = StyleSheet.create({
     fontWeight: 'bold',
   },
   userInfo: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
     padding: 20,
     backgroundColor: '#fff3cd',
     borderBottomWidth: 1,
     borderBottomColor: '#ffeaa7',
+  },
+  userInfoLeft: {
+    flex: 1,
   },
   userName: {
     fontSize: 18,
@@ -253,6 +259,17 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: '#666',
     marginTop: 4,
+  },
+  dashboardButton: {
+    paddingHorizontal: 20,
+    paddingVertical: 10,
+    backgroundColor: '#000',
+    borderRadius: 8,
+  },
+  dashboardButtonText: {
+    color: '#fff',
+    fontSize: 14,
+    fontWeight: 'bold',
   },
   searchSection: {
     padding: 20,
