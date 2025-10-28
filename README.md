@@ -161,23 +161,24 @@ GOOGLE_MAPS_API_KEY=your_google_maps_api_key
 
 **Deliverable:** Users can sign up, login, and access protected home screen ✅
 
-### 🔄 Phase 2: Bus Listings & Search (NEXT)
+### ✅ Phase 2: Bus Listings & Search (COMPLETE)
 
 **Backend:**
-- [ ] Bus CRUD endpoints (create, read, update, delete)
-- [ ] Passenger search with priority sorting
-- [ ] Google Geocoding integration
-- [ ] Search history tracking
-- [ ] Driver-specific routes
+- [x] Bus CRUD endpoints (create, read, update, delete)
+- [x] Passenger search with priority sorting
+- [x] Google Geocoding integration
+- [x] Search history tracking
+- [x] Driver-specific routes
 
 **Mobile:**
-- [ ] Home screen search functionality
-- [ ] BusResults screen
-- [ ] Driver dashboard
-- [ ] Bus creation/editing forms
-- [ ] Search history display
+- [x] Home screen search functionality
+- [x] BusResults screen
+- [x] Driver dashboard
+- [x] Bus creation/editing forms
+- [x] Search history display
+- [x] BusDetails screen (basic version)
 
-**Deliverable:** Drivers can create listings, passengers can search buses
+**Deliverable:** Drivers can create listings, passengers can search buses ✅
 
 ### ⏳ Phase 3: GPS Tracking & Maps
 
