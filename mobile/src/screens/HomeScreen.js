@@ -7,8 +7,11 @@ import {
   StyleSheet,
   ScrollView,
   ActivityIndicator,
+  Alert,
 } from 'react-native';
 import { useAuth } from '../context/AuthContext';
+import busService from '../services/busService';
+import { useFocusEffect } from '@react-navigation/native';
 
 const HomeScreen = ({ navigation }) => {
   const { user, handleLogout } = useAuth();
@@ -20,17 +23,38 @@ const HomeScreen = ({ navigation }) => {
   const [isLoading, setIsLoading] = useState(false);
 
   /**
+   * Load search history
+   */
+  const loadSearchHistory = async () => {
+    try {
+      const history = await busService.getSearchHistory();
+      setSearchHistory(history.slice(0, 10)); // Show last 10
+    } catch (error) {
+      // Silently fail - search history is not critical
+      console.log('Failed to load search history:', error.message);
+    }
+  };
+
+  /**
+   * Load search history on mount
+   */
+  useEffect(() => {
+    loadSearchHistory();
+  }, []);
+
+  /**
    * Handle search button press
    */
   const handleSearch = () => {
     if (!fromStand.trim() || !toStand.trim()) {
-      alert('Please enter both From and To stands');
+      Alert.alert('Required Fields', 'Please enter both From and To stands');
       return;
     }
 
-    // TODO: Navigate to BusResultsScreen with search params
-    // navigation.navigate('BusResults', { from: fromStand, to: toStand });
-    alert(`Searching buses from ${fromStand} to ${toStand}`);
+    navigation.navigate('BusResults', {
+      from: fromStand.trim(),
+      to: toStand.trim(),
+    });
   };
 
   /**
@@ -38,13 +62,21 @@ const HomeScreen = ({ navigation }) => {
    */
   const handleBusSearch = () => {
     if (!busQuery.trim()) {
-      alert('Please enter a bus number or name');
+      Alert.alert('Required Field', 'Please enter a bus number or name');
       return;
     }
 
-    // TODO: Navigate to BusResultsScreen with query param
-    // navigation.navigate('BusResults', { query: busQuery });
-    alert(`Searching for bus: ${busQuery}`);
+    navigation.navigate('BusResults', {
+      query: busQuery.trim(),
+    });
+  };
+
+  /**
+   * Handle search history item tap
+   */
+  const handleHistoryItemPress = (item) => {
+    setFromStand(item.from_stand);
+    setToStand(item.to_stand);
   };
 
   /**
