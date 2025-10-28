@@ -394,10 +394,11 @@ For issues or questions:
 
 ---
 
-**Current Status:** Phase 1 Complete ✅ | Phase 2 Next 🔄
+**Current Status:** Phase 1 & 2 Complete ✅ | Phase 3 Next 🔄
 
 **Next Steps:**
-1. Implement bus CRUD endpoints (Backend)
-2. Add Google Geocoding integration
-3. Build driver dashboard screens (Mobile)
-4. Implement passenger search functionality
+1. Implement GPS tracking endpoints (Backend)
+2. Integrate Google Maps in mobile app
+3. Build BusDetails screen with live map
+4. Add "Inside This Bus" toggle functionality
+5. Implement animated bus position updates
