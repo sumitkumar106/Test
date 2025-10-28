@@ -76,8 +76,11 @@ const AppStack = () => {
         component={DriverEditBusScreen}
         options={{ title: 'Edit Bus Listing' }}
       />
-      {/* Phase 3: Bus Details with map */}
-      {/* <Stack.Screen name="BusDetails" component={BusDetailsScreen} /> */}
+      <Stack.Screen
+        name="BusDetails"
+        component={BusDetailsScreen}
+        options={{ title: 'Bus Details' }}
+      />
     </Stack.Navigator>
   );
 };
