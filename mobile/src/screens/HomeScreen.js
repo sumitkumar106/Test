@@ -332,6 +332,9 @@ const styles = StyleSheet.create({
     paddingVertical: 20,
   },
   historyItem: {
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    alignItems: 'center',
     padding: 15,
     borderBottomWidth: 1,
     borderBottomColor: '#f0f0f0',
@@ -339,6 +342,11 @@ const styles = StyleSheet.create({
   historyText: {
     fontSize: 14,
     color: '#333',
+    fontWeight: '500',
+  },
+  historyTime: {
+    fontSize: 12,
+    color: '#999',
   },
   bannerAd: {
     height: 60,
