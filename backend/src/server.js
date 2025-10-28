@@ -25,7 +25,12 @@ if (process.env.NODE_ENV === 'development') {
 
 // Routes
 const authRoutes = require('./routes/auth');
+const driverRoutes = require('./routes/driver');
+const busRoutes = require('./routes/buses');
+
 app.use('/api/auth', authRoutes);
+app.use('/api/driver', driverRoutes);
+app.use('/api/buses', busRoutes);
 
 // Health check endpoint
 app.get('/health', (req, res) => {
