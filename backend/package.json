@@ -1,0 +1,29 @@
+{
+  "name": "bus-stand-backend",
+  "version": "1.0.0",
+  "description": "Backend API for Bus Stand App",
+  "main": "src/server.js",
+  "scripts": {
+    "start": "node src/server.js",
+    "dev": "nodemon src/server.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": ["bus", "tracking", "api"],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.0",
+    "mongoose": "^7.0.0",
+    "bcrypt": "^5.1.0",
+    "jsonwebtoken": "^9.0.0",
+    "express-validator": "^7.0.0",
+    "dotenv": "^16.0.0",
+    "cors": "^2.8.5",
+    "axios": "^1.4.0",
+    "node-cron": "^3.0.2",
+    "firebase-admin": "^11.9.0"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.22"
+  }
+}
