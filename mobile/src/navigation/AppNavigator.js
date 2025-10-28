@@ -55,10 +55,28 @@ const AppStack = () => {
         component={HomeScreen}
         options={{ title: 'Bus Stand' }}
       />
-      {/* TODO: Add more screens in future phases */}
-      {/* <Stack.Screen name="BusResults" component={BusResultsScreen} /> */}
+      <Stack.Screen
+        name="BusResults"
+        component={BusResultsScreen}
+        options={{ title: 'Search Results' }}
+      />
+      <Stack.Screen
+        name="DriverDashboard"
+        component={DriverDashboardScreen}
+        options={{ title: 'My Buses' }}
+      />
+      <Stack.Screen
+        name="DriverCreateBus"
+        component={DriverCreateBusScreen}
+        options={{ title: 'Create Bus Listing' }}
+      />
+      <Stack.Screen
+        name="DriverEditBus"
+        component={DriverEditBusScreen}
+        options={{ title: 'Edit Bus Listing' }}
+      />
+      {/* Phase 3: Bus Details with map */}
       {/* <Stack.Screen name="BusDetails" component={BusDetailsScreen} /> */}
-      {/* <Stack.Screen name="DriverDashboard" component={DriverDashboardScreen} /> */}
     </Stack.Navigator>
   );
 };
