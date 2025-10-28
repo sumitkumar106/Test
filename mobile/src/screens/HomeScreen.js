@@ -359,25 +359,6 @@ const styles = StyleSheet.create({
     fontSize: 14,
     color: '#666',
   },
-  placeholder: {
-    padding: 20,
-    margin: 20,
-    backgroundColor: '#e8f5e9',
-    borderRadius: 8,
-    borderWidth: 1,
-    borderColor: '#4caf50',
-  },
-  placeholderText: {
-    fontSize: 16,
-    fontWeight: 'bold',
-    color: '#2e7d32',
-    marginBottom: 8,
-  },
-  placeholderSubtext: {
-    fontSize: 14,
-    color: '#388e3c',
-    lineHeight: 20,
-  },
 });
 
 export default HomeScreen;
