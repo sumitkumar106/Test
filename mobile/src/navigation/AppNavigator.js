@@ -9,6 +9,10 @@ import { useAuth } from '../context/AuthContext';
 import LoginScreen from '../screens/LoginScreen';
 import SignupScreen from '../screens/SignupScreen';
 import HomeScreen from '../screens/HomeScreen';
+import BusResultsScreen from '../screens/BusResultsScreen';
+import DriverDashboardScreen from '../screens/DriverDashboardScreen';
+import DriverCreateBusScreen from '../screens/DriverCreateBusScreen';
+import DriverEditBusScreen from '../screens/DriverEditBusScreen';
 
 const Stack = createStackNavigator();
 const Tab = createBottomTabNavigator();
