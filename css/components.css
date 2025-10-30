@@ -1,0 +1,466 @@
+/* Route Card Component */
+.route-card {
+  background: #ffffff;
+  padding: 15px;
+  margin: 12px 20px;
+  border-radius: 8px;
+  border: 1px solid #e0e0e0;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.route-card:hover {
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+  transform: translateY(-2px);
+}
+
+.route-card-header {
+  margin-bottom: 10px;
+}
+
+.route-card-name {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333333;
+  margin-bottom: 5px;
+}
+
+.route-card-number {
+  font-size: 14px;
+  color: #999999;
+}
+
+.route-card-time {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  color: #666666;
+  font-size: 14px;
+  margin-bottom: 12px;
+}
+
+.route-card-days {
+  display: flex;
+  gap: 8px;
+}
+
+/* Day Selector Component */
+.day-selector-container {
+  margin: 20px 0;
+}
+
+.day-selector-label {
+  display: block;
+  color: #666666;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+.day-selector {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.day-button {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  border: 1px solid #e0e0e0;
+  background: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 16px;
+  font-weight: 600;
+  color: #999999;
+  cursor: pointer;
+  transition: all 0.3s;
+  position: relative;
+}
+
+.day-button:hover {
+  background: #f5f5f5;
+}
+
+.day-button.selected {
+  background: #333333;
+  color: #ffffff;
+  border-color: #333333;
+}
+
+.day-button.selected::after {
+  content: '✓';
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  width: 18px;
+  height: 18px;
+  background: #333333;
+  color: #ffffff;
+  border-radius: 50%;
+  font-size: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.day-badge {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.day-badge.active {
+  background: #333333;
+  color: #ffffff;
+}
+
+.day-badge.inactive {
+  background: #ffffff;
+  color: #cccccc;
+  border: 1px solid #e0e0e0;
+}
+
+/* Time Picker Input Component */
+.time-picker-container {
+  margin-bottom: 20px;
+}
+
+.time-picker-label {
+  display: block;
+  color: #999999;
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+
+.time-picker-input {
+  width: 100%;
+  padding: 12px 35px 12px 0;
+  border: none;
+  border-bottom: 1px solid #e0e0e0;
+  font-size: 16px;
+  background: transparent;
+  outline: none;
+  cursor: pointer;
+  position: relative;
+  color: #333333;
+}
+
+.time-picker-wrapper {
+  position: relative;
+}
+
+.time-picker-icon {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  color: #999999;
+}
+
+/* Stoppage Input Component */
+.stoppage-container {
+  margin-bottom: 20px;
+  padding: 15px;
+  background: #fafafa;
+  border-radius: 8px;
+  position: relative;
+}
+
+.stoppage-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.stoppage-number {
+  background: #333333;
+  color: #ffffff;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.stoppage-remove {
+  background: none;
+  border: none;
+  color: #f44336;
+  cursor: pointer;
+  font-size: 20px;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+}
+
+.stoppage-input {
+  width: 100%;
+  padding: 10px 0;
+  border: none;
+  border-bottom: 1px solid #e0e0e0;
+  font-size: 14px;
+  background: transparent;
+  outline: none;
+  margin-bottom: 10px;
+}
+
+.stoppage-time {
+  font-size: 12px;
+  color: #999999;
+  margin-top: 5px;
+}
+
+/* Toast Notification Component */
+.toast-container {
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 9999;
+  pointer-events: none;
+}
+
+.toast {
+  background: #333333;
+  color: #ffffff;
+  padding: 15px 25px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+  margin-bottom: 10px;
+  animation: slideDown 0.3s ease-out;
+  pointer-events: all;
+}
+
+.toast.success {
+  background: #4caf50;
+}
+
+.toast.error {
+  background: #f44336;
+}
+
+.toast.info {
+  background: #2196f3;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Modal Component */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10000;
+  animation: fadeIn 0.2s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal-content {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  max-width: 400px;
+  width: 90%;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+  animation: scaleIn 0.2s ease-out;
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.modal-title {
+  font-size: 20px;
+  font-weight: bold;
+  color: #333333;
+  margin-bottom: 15px;
+}
+
+.modal-message {
+  font-size: 14px;
+  color: #666666;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+
+.modal-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.modal-actions .btn {
+  flex: 1;
+}
+
+/* Details Card Component */
+.details-card {
+  background: #ffffff;
+  margin: 15px 20px;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.details-card-title {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333333;
+  margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.details-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 10px 0;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.details-row:last-child {
+  border-bottom: none;
+}
+
+.details-label {
+  color: #999999;
+  font-size: 14px;
+}
+
+.details-value {
+  color: #333333;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+/* Stoppage List Component */
+.stoppage-list {
+  margin-top: 15px;
+}
+
+.stoppage-list-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 12px 0;
+  border-bottom: 1px solid #f5f5f5;
+}
+
+.stoppage-list-item:last-child {
+  border-bottom: none;
+}
+
+.stoppage-list-number {
+  background: #333333;
+  color: #ffffff;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: bold;
+  flex-shrink: 0;
+}
+
+.stoppage-list-info {
+  flex: 1;
+}
+
+.stoppage-list-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #333333;
+  margin-bottom: 3px;
+}
+
+.stoppage-list-time {
+  font-size: 12px;
+  color: #999999;
+}
+
+/* Schedule Card */
+.schedule-card {
+  background: #f8f9fa;
+  margin: 15px 20px;
+  padding: 20px;
+  border-radius: 8px;
+  border-left: 4px solid #333333;
+}
+
+.schedule-card.outbound {
+  border-left-color: #2196f3;
+  background: #e3f2fd;
+}
+
+.schedule-card.return {
+  border-left-color: #4caf50;
+  background: #e8f5e9;
+}
+
+.schedule-title {
+  font-size: 16px;
+  font-weight: bold;
+  color: #333333;
+  margin-bottom: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.schedule-time-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+}
+
+.schedule-time-label {
+  color: #666666;
+  font-size: 14px;
+}
+
+.schedule-time-value {
+  color: #333333;
+  font-size: 14px;
+  font-weight: 600;
+}
