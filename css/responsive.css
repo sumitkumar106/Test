@@ -1,0 +1,189 @@
+/* Mobile First - Base styles are mobile-optimized */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+  .form-container {
+    margin: 30px auto;
+    max-width: 540px;
+  }
+
+  .details-card {
+    margin: 20px auto;
+    max-width: 540px;
+  }
+
+  .route-card {
+    margin: 15px auto;
+    max-width: 540px;
+  }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+  .header-title {
+    font-size: 28px;
+  }
+
+  .form-container {
+    max-width: 720px;
+    padding: 30px;
+  }
+
+  .details-card {
+    max-width: 720px;
+    padding: 25px;
+  }
+
+  .route-card {
+    max-width: 720px;
+  }
+
+  .day-selector {
+    gap: 15px;
+  }
+
+  .day-button {
+    width: 56px;
+    height: 56px;
+    font-size: 18px;
+  }
+
+  .fab {
+    width: 64px;
+    height: 64px;
+    font-size: 28px;
+    bottom: 90px;
+    right: 30px;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  #app {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  .header-title {
+    font-size: 32px;
+  }
+
+  .form-container {
+    max-width: 800px;
+    padding: 40px;
+  }
+
+  .details-card {
+    max-width: 800px;
+    padding: 30px;
+  }
+
+  .route-card {
+    max-width: 800px;
+  }
+
+  .modal-content {
+    max-width: 500px;
+  }
+
+  .ad-banner-container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+
+/* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  .form-container,
+  .details-card,
+  .route-card {
+    max-width: 900px;
+  }
+}
+
+/* Landscape orientation adjustments */
+@media (orientation: landscape) and (max-height: 500px) {
+  .header {
+    padding: 15px;
+  }
+
+  .header-title {
+    font-size: 20px;
+  }
+
+  .form-container {
+    margin: 15px;
+    padding: 15px;
+  }
+
+  .fab {
+    bottom: 70px;
+    right: 15px;
+  }
+}
+
+/* Print styles */
+@media print {
+  .fab,
+  .ad-banner-container,
+  .back-button,
+  .btn {
+    display: none !important;
+  }
+
+  .screen {
+    padding-bottom: 0;
+  }
+
+  body {
+    background: #ffffff;
+  }
+}
+
+/* Touch device optimizations */
+@media (hover: none) and (pointer: coarse) {
+  .btn {
+    min-height: 48px;
+  }
+
+  .day-button {
+    min-width: 48px;
+    min-height: 48px;
+  }
+
+  .text-input {
+    font-size: 16px; /* Prevents zoom on iOS */
+  }
+
+  .route-card:active {
+    transform: scale(0.98);
+  }
+
+  .fab:active {
+    transform: scale(0.95);
+  }
+}
+
+/* High DPI displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .route-card,
+  .details-card,
+  .form-container {
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+  }
+}
+
+/* Dark mode support (if user prefers dark mode) */
+@media (prefers-color-scheme: dark) {
+  /* Optional: Add dark mode styles here if needed in future */
+  /* For now, keeping light mode only as per mockup */
+}
+
+/* Reduced motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
