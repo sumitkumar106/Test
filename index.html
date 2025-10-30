@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bus Stand - Your Route, Your Way</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <!-- Header Section -->
+        <div class="header">
+            <p class="welcome-text">Welcome to bus stand</p>
+            <h1 class="main-title">Your Route, Your Way</h1>
+        </div>
+
+        <!-- Form -->
+        <form id="busRouteForm">
+            <!-- Route Direction Icon -->
+            <div class="route-icon">
+                <span>📍</span>
+                <span>↔️</span>
+                <span>📍</span>
+            </div>
+
+            <!-- Bus Name Input -->
+            <input type="text" id="busName" placeholder="Bus Name" class="text-input" required>
+
+            <!-- Bus No. Input -->
+            <input type="text" id="busNo" placeholder="Bus No." class="text-input" required>
+
+            <!-- Bus Start Time -->
+            <div class="time-picker-group">
+                <label>Bus Start</label>
+                <select id="busStartTime" class="time-picker">
+                    <option value="00:00 AM">00:00 AM</option>
+                </select>
+            </div>
+
+            <!-- Bus End Time -->
+            <div class="time-picker-group">
+                <label>Bus End</label>
+                <select id="busEndTime" class="time-picker">
+                    <option value="00:00 PM">00:00 PM</option>
+                </select>
+            </div>
+
+            <!-- Day Selector -->
+            <div class="day-selector">
+                <label>Select Bus Ran Day</label>
+                <div class="day-buttons">
+                    <button type="button" class="day-btn" data-day="Sunday">S</button>
+                    <button type="button" class="day-btn" data-day="Monday">M</button>
+                    <button type="button" class="day-btn" data-day="Tuesday">T</button>
+                    <button type="button" class="day-btn" data-day="Wednesday">W</button>
+                    <button type="button" class="day-btn" data-day="Thursday">T</button>
+                    <button type="button" class="day-btn" data-day="Friday">F</button>
+                    <button type="button" class="day-btn" data-day="Saturday">S</button>
+                </div>
+            </div>
+
+            <!-- Stoppage Container -->
+            <div id="stoppageContainer">
+                <!-- First Stoppage Entry (template) -->
+                <div class="stoppage-entry">
+                    <input type="text" placeholder="Stoppage Name" class="text-input stoppage-name" required>
+                    <div class="time-picker-group">
+                        <select class="time-picker stoppage-time">
+                            <option value="00:00 AM">00:00 AM</option>
+                        </select>
+                        <label class="arrival-time-label">Arrival Time</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Add More Stoppage Button -->
+            <button type="button" class="add-stoppage-btn">ADD MORE STOPPAGE</button>
+
+            <!-- Route Direction Icon (Return Trip) -->
+            <div class="route-icon">
+                <span>📍</span>
+                <span>↔️</span>
+                <span>📍</span>
+            </div>
+
+            <!-- Return Trip Section -->
+            <div class="return-trip">
+                <!-- Bus Start (Return) -->
+                <div class="time-picker-group">
+                    <label>Bus Start</label>
+                    <select id="returnStartTime" class="time-picker">
+                        <option value="00:00 PM">00:00 PM</option>
+                    </select>
+                </div>
+
+                <!-- Bus End (Return) -->
+                <div class="time-picker-group">
+                    <label>Bus End</label>
+                    <select id="returnEndTime" class="time-picker">
+                        <option value="00:00 AM">00:00 AM</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Save Button -->
+            <button type="submit" class="save-btn">Save</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
